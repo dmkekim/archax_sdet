@@ -1,0 +1,25 @@
+{
+  "name": "archax_sdet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "jest": {
+    "testTimeout": 20000
+  },
+  "scripts": {
+    "jest:ws": "jest --detectOpenHandles --forceExit --runTestsByPath jest/__websockets__/inventory.test.js",
+    "jest:api": "jest --detectOpenHandles --forceExit --runTestsByPath jest/__api__/purchase.test.js",
+    "test:qa": "npx cypress open --env ENVIRONMENT=QA --e2e"
+  },
+  "author": "Dhon Kekim",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.4",
+    "jest": "^29.7.0"
+  },
+  "devDependencies": {
+    "supertest": "^6.3.4",
+    "superwstest": "^2.0.3",
+    "ws": "^8.16.0"
+  }
+}
