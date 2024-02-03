@@ -18,11 +18,17 @@ const environments = {
     prod: 'PROD'
 }
 
+const testTypes = {
+    SMOKE: 'smoke',
+    REGRESSION: 'regression'
+}
+
 module.exports = {
     baseUrl: backEndUrl,
     purchaseCoin: purchase,
     getInventory: getInventory,
     getCoins: getCoins,
     coins: coins,
-    envs: environments
+    envs: environments,
+    testTypes
 }

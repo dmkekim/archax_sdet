@@ -29,8 +29,8 @@ describe('Verify /get-inventory endpoint functionalities', () => {
                 // Check price of CoinB after receiving next message.
                 // It should increment by 1
                 resp.coins.forEach(coin => {
-                    if(coin.id === coinId) {
-                        expect(coin.price).toEqual(coinBBasePrice + 1)
+                    if(coin.id === coinIdPriceIncrementTest) {
+                        expect(coin.price).toEqual(coinBasePriceIncrementTest + 1)
                     }
                 });   
             })

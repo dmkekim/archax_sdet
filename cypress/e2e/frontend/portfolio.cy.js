@@ -5,7 +5,7 @@ describe('Verify Portfolio page behaviors/validations', () => {
     const initialBalance = '1000'
     const numberOfCoinOptions = 4
 
-    it('Checking defaults of the page on load', () => {
+    it('Checking defaults of the page on load', { tags: [_.testTypes.SMOKE] }, () => {
         $.goToPortfolioPage()
 
         // Assert that you begin with a $1000 USD balance
@@ -21,7 +21,7 @@ describe('Verify Portfolio page behaviors/validations', () => {
         })
     })
 
-    it('Verify behaviors after buying a coin', () => {
+    it('Verify behaviors after buying a coin', { tags: [_.testTypes.SMOKE] }, () => {
         const noOfCoinAToBuy = '2'
         const noOfCoinBToBuy = '3'
         const noOfCoinCToBuy = '1'
