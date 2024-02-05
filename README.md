@@ -15,3 +15,7 @@
 -   utils/ contains folders containing the common functions, test data and parameters, and web element locators.
 -   scripts section on package.json shows that we can pass arguments to JEST or Cypress which is used when running the test in CI pipeline.
 -   jest execution timeout is overridden in package.json. No jest.config.js file used.
+
+## General Notes/Documentation:
+-   To setup, clone this repository then run npm install
+-   To run scripts, npm run {scrip-command}
