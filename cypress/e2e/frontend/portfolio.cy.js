@@ -21,7 +21,30 @@ describe('Verify Portfolio page behaviors/validations', () => {
         })
     })
 
-    it('Verify behaviors after buying a coin', { tags: [_.testTypes.SMOKE] }, () => {
+    /**
+     * The flow on this test is,
+     * 1. Buy all 3 coins first.
+     * 2. Get amount of coins owned for all 3 coins.
+     * 3. Get market value of coin and price per coin, starting with CoinA, then CoinB, then CoinC
+     * 4. Then assertions.
+     * 
+     * This is done this way instead of Buy CoinA -> Get owned amount CoinA -> Get market value and price of CoinA -> assertions for CoinA
+     * then do the same for CoinB and then CoinC 
+     * is to consider the behavior that market value and price per coin changes every 5 seconds.
+     * So we need to do the get market value and price per coin action as close to each other as possible
+     * to minimize time difference.
+     * 
+     * However, despite the current design of this test, it will still fail on this edge case:
+     * 1. The initial state of the screen is about to change
+     * 2. getCoinMarketValue(CoinA) is fired.
+     * 3. State of the screen changes.
+     * 4. getPricePerCoin(CoinA) is fired.
+     * 5. During assertion, theoretically, this will fail since market value is computed based on the price per coin on previous state.
+     * 
+     * For this exercise, I assume that this edge case is an exemption. This can be addressed, on top of my head,
+     * by working on the "frozen" instance of the DOM.
+     */
+    it('Verify behaviors after buying three coins', { tags: [_.testTypes.SMOKE] }, () => {
         const noOfCoinAToBuy = '2'
         const noOfCoinBToBuy = '3'
         const noOfCoinCToBuy = '1'

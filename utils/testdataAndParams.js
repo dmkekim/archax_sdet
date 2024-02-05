@@ -1,7 +1,24 @@
+/**
+ * ENVIRONMENT related parameters
+ */
 const backEndUrl = 'http://localhost:3100'
+const environments = {
+    dev: 'DEV',
+    qa: 'QA',
+    staging: 'STAGING',
+    prod: 'PROD'
+}
+
+/**
+ * Backend Related
+ */
 const purchase = '/purchase-coin'
 const getInventory = '/get-inventory'
 const getCoins = '/get-coins'
+
+/**
+ * Constants
+ */
 const coins = {
     // Do not alter ordering of entry.
     // Order of entry here should correspond to how they are ordered on screen.
@@ -11,18 +28,14 @@ const coins = {
     COIN_C: 'CoinC',
     COIN_D: 'CoinD'
 }
-const environments = {
-    dev: 'DEV',
-    qa: 'QA',
-    staging: 'STAGING',
-    prod: 'PROD'
-}
-
 const testTypes = {
     SMOKE: 'smoke',
     REGRESSION: 'regression'
 }
 
+/**
+ * Export
+ */
 module.exports = {
     baseUrl: backEndUrl,
     purchaseCoin: purchase,

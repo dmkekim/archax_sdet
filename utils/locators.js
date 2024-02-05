@@ -1,3 +1,7 @@
+/**
+ * 1. All web element locators will be placed on this single js file.
+ * 2. Locators will be grouped per page, then per section of the page if necessary
+ */
 export const locators = {
     portfolioPage: {
         balance: 'div.inventory > :nth-child(2)',
